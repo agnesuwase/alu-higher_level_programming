@@ -1,3 +1,2 @@
-#!/usr/bin/env bash
-# This script runs the Python file specified by the PYFILE environment variable
+#!/bin/bash
 python3 "$PYFILE"
