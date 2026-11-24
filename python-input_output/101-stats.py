@@ -27,7 +27,7 @@ try:
             pass
         if count % 10 == 0:
             print_stats(total_size, status_codes)
-    if count % 10 != 0:
+    if count == 0 or count % 10 != 0:
         print_stats(total_size, status_codes)
 except KeyboardInterrupt:
     print_stats(total_size, status_codes)
