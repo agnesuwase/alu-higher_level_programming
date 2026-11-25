@@ -19,5 +19,4 @@ to review Python object-oriented programming concepts.
 ## Run the tests
     python3 -m unittest discover tests
 
-## Author
 Agnes Uwase
