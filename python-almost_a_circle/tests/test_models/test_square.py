@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittests for models/square.py."""
 import io
+import os
 import unittest
 import unittest.mock
 from models.base import Base
@@ -400,6 +401,34 @@ class TestSquareToDictionary(unittest.TestCase):
         """Argument raises TypeError."""
         with self.assertRaises(TypeError):
             Square(10, 10, 10, 10).to_dictionary(1)
+
+
+class TestSquareSaveToFile(unittest.TestCase):
+    """Tests for Square.save_to_file."""
+
+    def tearDown(self):
+        """Delete created file."""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+
+    def test_save_to_file_empty_list(self):
+        """Square.save_to_file([]) writes '[]'."""
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_none(self):
+        """Square.save_to_file(None) writes '[]'."""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_one_square(self):
+        """Square.save_to_file with one square."""
+        Square.save_to_file([Square(1, 2, 3, 4)])
+        with open("Square.json", "r") as f:
+            data = Square.from_json_string(f.read())
+        self.assertEqual([{"id": 4, "size": 1, "x": 2, "y": 3}], data)
 
 
 if __name__ == "__main__":
