@@ -20,6 +20,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - model_state.py: State class and Base for SQLAlchemy (table states)
 - 7-model_state_fetch_all.py: lists all State objects
 - 8-model_state_fetch_first.py: prints the first State object
+- 9-model_state_filter_a.py: lists all State objects containing the letter a
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
