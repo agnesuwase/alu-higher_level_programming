@@ -21,6 +21,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 7-model_state_fetch_all.py: lists all State objects
 - 8-model_state_fetch_first.py: prints the first State object
 - 9-model_state_filter_a.py: lists all State objects containing the letter a
+- 10-model_state_my_get.py: prints the id of the State with the given name
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
