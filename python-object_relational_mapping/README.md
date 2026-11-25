@@ -25,6 +25,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
 - relationship_state.py / relationship_city.py: State and City with a cities relationship
 - 100-relationship_states_cities.py: creates California with the city San Francisco
+- 101-relationship_states_cities_list.py: lists all States with their Cities
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
@@ -33,6 +34,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
 - relationship_state.py / relationship_city.py: State and City with a cities relationship
 - 100-relationship_states_cities.py: creates California with the city San Francisco
+- 101-relationship_states_cities_list.py: lists all States with their Cities
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
@@ -41,6 +43,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
 - relationship_state.py / relationship_city.py: State and City with a cities relationship
 - 100-relationship_states_cities.py: creates California with the city San Francisco
+- 101-relationship_states_cities_list.py: lists all States with their Cities
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
