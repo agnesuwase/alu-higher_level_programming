@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module defining the Base class."""
+import csv
 import json
 
 
@@ -63,5 +64,40 @@ class Base:
             with open(filename, "r") as f:
                 dicts = cls.from_json_string(f.read())
                 return [cls.create(**d) for d in dicts]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV serialization of list_objs to <Class name>.csv."""
+        filename = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            fields = ["id", "width", "height", "x", "y"]
+        else:
+            fields = ["id", "size", "x", "y"]
+        with open(filename, "w", newline="") as f:
+            writer = csv.writer(f)
+            if list_objs is not None:
+                for obj in list_objs:
+                    d = obj.to_dictionary()
+                    writer.writerow([d[key] for key in fields])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of instances loaded from <Class name>.csv."""
+        filename = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            fields = ["id", "width", "height", "x", "y"]
+        else:
+            fields = ["id", "size", "x", "y"]
+        try:
+            with open(filename, "r", newline="") as f:
+                reader = csv.reader(f)
+                result = []
+                for row in reader:
+                    if row:
+                        d = {k: int(v) for k, v in zip(fields, row)}
+                        result.append(cls.create(**d))
+                return result
         except IOError:
             return []
