@@ -13,6 +13,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 0-select_states.py: lists all states from the database hbtn_0e_0_usa,
   sorted by states.id
 - 1-filter_states.py: lists all states with a name starting with N
+- 2-my_filter_states.py: displays states where name matches the argument
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
