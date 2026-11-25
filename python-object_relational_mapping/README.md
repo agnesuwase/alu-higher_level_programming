@@ -23,18 +23,24 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 9-model_state_filter_a.py: lists all State objects containing the letter a
 - model_city.py: City class linked to the table cities
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
+- relationship_state.py / relationship_city.py: State and City with a cities relationship
+- 100-relationship_states_cities.py: creates California with the city San Francisco
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
 - 13-model_state_delete_a.py: deletes all States with a name containing the letter a
 - model_city.py: City class linked to the table cities
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
+- relationship_state.py / relationship_city.py: State and City with a cities relationship
+- 100-relationship_states_cities.py: creates California with the city San Francisco
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
 - 13-model_state_delete_a.py: deletes all States with a name containing the letter a
 - model_city.py: City class linked to the table cities
 - 14-model_city_fetch_by_state.py: prints all City objects with their state
+- relationship_state.py / relationship_city.py: State and City with a cities relationship
+- 100-relationship_states_cities.py: creates California with the city San Francisco
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
