@@ -18,6 +18,7 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 4-cities_by_state.py: lists all cities with their state name
 - 5-filter_cities.py: lists all cities of a given state
 - model_state.py: State class and Base for SQLAlchemy (table states)
+- 7-model_state_fetch_all.py: lists all State objects
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
