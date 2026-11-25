@@ -24,9 +24,11 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
+- 13-model_state_delete_a.py: deletes all States with a name containing the letter a
 - 10-model_state_my_get.py: prints the id of the State with the given name
 - 11-model_state_insert.py: adds the State Louisiana
 - 12-model_state_update_id_2.py: renames the State with id 2 to New Mexico
+- 13-model_state_delete_a.py: deletes all States with a name containing the letter a
 
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
