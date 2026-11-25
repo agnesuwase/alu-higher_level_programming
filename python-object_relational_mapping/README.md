@@ -16,5 +16,4 @@ first with MySQLdb and then with SQLAlchemy (ORM).
 ## Usage
     ./0-select_states.py <mysql username> <mysql password> <database name>
 
-## Author
 Agnes Uwase
