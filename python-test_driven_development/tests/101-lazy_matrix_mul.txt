@@ -1,0 +1,91 @@
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+
+>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13 16]]
+
+>>> print(lazy_matrix_mul([[1.5, 2]], [[2], [3]]))
+[[9.]]
+
+>>> print(lazy_matrix_mul([[2]], [[3]]))
+[[6]]
+
+>>> print(lazy_matrix_mul([[1, 2, 3]], [[1], [2], [3]]))
+[[14]]
+
+>>> print(lazy_matrix_mul([[1], [2], [3]], [[1, 2, 3]]))
+[[1 2 3]
+ [2 4 6]
+ [3 6 9]]
+
+>>> print(lazy_matrix_mul([[-1, 2], [3, -4]], [[1, 0], [0, 1]]))
+[[-1  2]
+ [ 3 -4]]
+
+Matrices that can't be multiplied raise a ValueError
+(the message depends on the NumPy version):
+
+>>> try:
+...     lazy_matrix_mul([[1, 2]], [[1, 2]])
+... except ValueError:
+...     print("ValueError")
+ValueError
+
+>>> try:
+...     lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3]])
+... except ValueError:
+...     print("ValueError")
+ValueError
+
+>>> try:
+...     lazy_matrix_mul([[1]], [])
+... except ValueError:
+...     print("ValueError")
+ValueError
+
+>>> try:
+...     lazy_matrix_mul([], [[1]])
+... except ValueError:
+...     print("ValueError")
+ValueError
+
+Strings can't be multiplied, so a TypeError is raised:
+
+>>> try:
+...     lazy_matrix_mul([[1, "a"]], [[1], [2]])
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     lazy_matrix_mul("a", [[1]])
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+Other invalid inputs are rejected by NumPy with a TypeError or a ValueError
+(depending on the NumPy version):
+
+>>> for a, b in [(None, [[1]]), ([[1]], None), ([[1]], [[None]]),
+...              ([[1, 2], [3]], [[1], [2]]), ([[1], [2]], [[1, 2], [3]])]:
+...     try:
+...         lazy_matrix_mul(a, b)
+...         print("no error")
+...     except (TypeError, ValueError):
+...         print("error")
+error
+error
+error
+error
+error
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> lazy_matrix_mul([[1]])
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
