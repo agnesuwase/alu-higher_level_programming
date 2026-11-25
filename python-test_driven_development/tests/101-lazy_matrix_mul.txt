@@ -52,19 +52,20 @@ ValueError
 ...     print("ValueError")
 ValueError
 
-Strings can't be multiplied, so a TypeError is raised:
+Strings can't be multiplied, so NumPy raises an error
+(a TypeError or a ValueError depending on the NumPy version):
 
->>> try:
-...     lazy_matrix_mul([[1, "a"]], [[1], [2]])
-... except TypeError:
-...     print("TypeError")
-TypeError
-
->>> try:
-...     lazy_matrix_mul("a", [[1]])
-... except TypeError:
-...     print("TypeError")
-TypeError
+>>> for a, b in [("a", [[1]]), ([[1]], "a"), ("abc", [[1, 2, 3]]),
+...              ([[1, "a"]], [[1], [2]])]:
+...     try:
+...         lazy_matrix_mul(a, b)
+...         print("no error")
+...     except (TypeError, ValueError):
+...         print("error")
+error
+error
+error
+error
 
 Other invalid inputs are rejected by NumPy with a TypeError or a ValueError
 (depending on the NumPy version):
